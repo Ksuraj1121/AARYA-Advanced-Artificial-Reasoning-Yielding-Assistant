@@ -20,9 +20,6 @@
 <div class="ai-background"></div>
 
 
-
-<!-- Navigation -->
-
 <nav>
 
 <div class="logo">
@@ -46,10 +43,7 @@
 
 </ul>
 
-
 </nav>
-
-
 
 
 
@@ -69,10 +63,8 @@ AI System Monitoring Interface
 
 
 <p>
-
 Real-time monitoring dashboard
 for AARYA core intelligence systems.
-
 </p>
 
 
@@ -102,8 +94,8 @@ for AARYA core intelligence systems.
 🧠 Brain Core
 </h3>
 
-<p>
-Status: Online
+<p id="brain">
+Loading...
 </p>
 
 <p>
@@ -122,8 +114,8 @@ Intelligence: 100%
 🎙 Voice Module
 </h3>
 
-<p>
-Status: Ready
+<p id="voice">
+Loading...
 </p>
 
 <p>
@@ -142,8 +134,8 @@ Wake Word: AARYA
 💾 Memory System
 </h3>
 
-<p>
-Status: Active
+<p id="memory">
+Loading...
 </p>
 
 <p>
@@ -162,8 +154,8 @@ Storage: Connected
 ⚡ Automation
 </h3>
 
-<p>
-Status: Running
+<p id="automation">
+Loading...
 </p>
 
 <p>
@@ -222,6 +214,7 @@ Tasks: Enabled
 
 
 
+
 <section>
 
 
@@ -231,6 +224,7 @@ Tasks: Enabled
 
 
 <div class="feature-container">
+
 
 
 <div class="card">
@@ -301,6 +295,87 @@ Task execution system.
 
 
 </footer>
+
+
+
+
+
+
+
+
+<script>
+
+
+async function loadAARYAStatus(){
+
+
+try{
+
+
+const response = await fetch(
+"http://localhost:8000/status"
+);
+
+
+const data = await response.json();
+
+
+
+document.getElementById("brain").innerHTML =
+"Status: " + data.brain_core;
+
+
+
+document.getElementById("voice").innerHTML =
+"Status: " + data.voice_module;
+
+
+
+document.getElementById("memory").innerHTML =
+"Status: " + data.memory_system;
+
+
+
+document.getElementById("automation").innerHTML =
+"Status: " + data.automation_engine;
+
+
+
+}
+
+catch(error){
+
+
+document.getElementById("brain").innerHTML =
+"API Offline";
+
+
+document.getElementById("voice").innerHTML =
+"API Offline";
+
+
+document.getElementById("memory").innerHTML =
+"API Offline";
+
+
+document.getElementById("automation").innerHTML =
+"API Offline";
+
+
+console.log(error);
+
+
+}
+
+
+}
+
+
+
+loadAARYAStatus();
+
+
+</script>
 
 
 
