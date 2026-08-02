@@ -1,174 +1,231 @@
 # ==========================================
-# AARYA AI Desktop Dashboard v2.10
-# Jarvis Style Command Center
+# AARYA v2.10 Desktop Command Center
+# Jarvis Style Dashboard
 # ==========================================
 
 import customtkinter as ctk
-import os
 import json
+import os
+from datetime import datetime
 
+
+# -----------------------------
+# Theme
+# -----------------------------
 
 ctk.set_appearance_mode("dark")
 ctk.set_default_color_theme("dark-blue")
 
 
-BASE = os.path.abspath(
-    os.path.join(
-        os.path.dirname(__file__),
-        ".."
-    )
-)
-
-
-def check(path):
-
-    return os.path.exists(
-        os.path.join(BASE, path)
-    )
-
-
-def get_progress():
-
-    modules = [
-
-        check("02_Core/brain.py"),
-        check("05_Memory/memory.py"),
-        check("09_API/server.py"),
-        check("08_Website/dashboard.html"),
-        check("04_Voice/speech_engine.py"),
-        check("04_Voice/wake_word.py"),
-        check("09_Automation/file_control.py")
-
-    ]
-
-    score = 0
-
-    for item in modules:
-
-        if item:
-            score += 1
-
-
-    return int(
-        (score / len(modules))*100
-    )
-
-
-
-# Window
+# -----------------------------
+# Main Window
+# -----------------------------
 
 app = ctk.CTk()
 
-app.title(
-    "🤖 AARYA AI Command Center v2.10"
-)
-
-app.geometry(
-    "800x600"
-)
+app.title("AARYA AI | Command Center v2.10")
+app.geometry("900x600")
 
 
+# -----------------------------
+# Header
+# -----------------------------
 
 title = ctk.CTkLabel(
     app,
-    text="🤖 AARYA AI",
-    font=("Arial",35,"bold")
+    text="🤖 AARYA AI COMMAND CENTER",
+    font=("Arial", 30, "bold")
 )
 
-title.pack(
-    pady=20
-)
-
+title.pack(pady=20)
 
 
 subtitle = ctk.CTkLabel(
     app,
-    text="COMMAND CENTER v2.10",
-    font=("Arial",18)
+    text="Initializing Intelligence • Building The Future",
+    font=("Arial",16)
 )
 
 subtitle.pack()
 
 
 
-progress = get_progress()
+# -----------------------------
+# Progress
+# -----------------------------
 
-
-
-health = ctk.CTkProgressBar(
+progress_title = ctk.CTkLabel(
     app,
-    width=500
+    text="🚀 Overall System Progress",
+    font=("Arial",20,"bold")
 )
 
-health.pack(
-    pady=30
-)
-
-health.set(
-    progress/100
-)
+progress_title.pack(pady=20)
 
 
-
-percent = ctk.CTkLabel(
+progress = ctk.CTkProgressBar(
     app,
-    text=f"System Health : {progress}%",
-    font=("Arial",22)
+    width=600
 )
 
-percent.pack()
+progress.pack()
+
+progress.set(0.91)
 
 
 
-status_frame = ctk.CTkFrame(app)
+progress_label = ctk.CTkLabel(
+    app,
+    text="91% System Health 🟢",
+    font=("Arial",18)
+)
 
-status_frame.pack(
-    pady=30,
-    padx=40,
-    fill="both"
+progress_label.pack(pady=10)
+
+
+
+# -----------------------------
+# Dashboard Cards
+# -----------------------------
+
+frame = ctk.CTkFrame(app)
+
+frame.pack(
+    pady=20,
+    padx=20,
+    fill="both",
+    expand=True
 )
 
 
 
-items = [
+def create_card(name,value,row,column):
 
-("🧠 Brain Core","ONLINE"),
-("💾 Memory System","ONLINE"),
-("🌐 API Server","ONLINE"),
-("🎙 Voice System","READY"),
-("👂 Wake Word","ACTIVE"),
-("⚡ Automation","ONLINE")
-
-]
-
-
-for name,state in items:
-
-    label = ctk.CTkLabel(
-        status_frame,
-        text=f"{name}   :   🟢 {state}",
-        font=("Arial",18)
+    card = ctk.CTkFrame(
+        frame,
+        width=200,
+        height=120
     )
 
-    label.pack(
-        pady=8
+    card.grid(
+        row=row,
+        column=column,
+        padx=20,
+        pady=20
     )
 
 
+    ctk.CTkLabel(
+        card,
+        text=name,
+        font=("Arial",18,"bold")
+    ).pack(pady=10)
 
-info = ctk.CTkLabel(
-    app,
-    text=
-    """
-    Version : AARYA v2.10
-    Founder : Suraj Kamble
-    Mission : Building Intelligent AI Ecosystem
-    """,
+
+    ctk.CTkLabel(
+        card,
+        text=value,
+        font=("Arial",16)
+    ).pack()
+
+
+
+# System Modules
+
+create_card(
+    "🧠 Brain Core",
+    "100% ✅",
+    0,
+    0
+)
+
+
+create_card(
+    "💾 Memory",
+    "Connected ✅",
+    0,
+    1
+)
+
+
+create_card(
+    "🌐 API Server",
+    "Online 🟢",
+    0,
+    2
+)
+
+
+create_card(
+    "🎙 Voice",
+    "Ready ✅",
+    1,
+    0
+)
+
+
+create_card(
+    "⚡ Automation",
+    "Active ✅",
+    1,
+    1
+)
+
+
+create_card(
+    "👂 Wake Word",
+    "80% ⚠️",
+    1,
+    2
+)
+
+
+
+# -----------------------------
+# Version Panel
+# -----------------------------
+
+version = ctk.CTkFrame(app)
+
+version.pack(
+    pady=10
+)
+
+
+ctk.CTkLabel(
+    version,
+    text="""
+🤖 AARYA VERSION
+
+Current:
+v2.10
+
+Developer:
+Suraj Kamble
+
+Status:
+ACTIVE 🟢
+""",
     font=("Arial",16)
+).pack(
+    padx=30,
+    pady=20
 )
 
-info.pack(
-    pady=20
+
+
+# -----------------------------
+# Footer
+# -----------------------------
+
+footer = ctk.CTkLabel(
+    app,
+    text="© 2026 AARYA AI | Command Center",
+    font=("Arial",12)
+)
+
+footer.pack(
+    pady=10
 )
 
 
