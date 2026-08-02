@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.pyc
+
+# VS Code
+.vscode/
+
+# Logs
+logs/
+
+# Backups
+14_Backups/
+
+# Test Files
+aarya_test/
+aarya_test2/
+
+# Temporary
+*.tmp
+
+# Audio Test
+voice.wav
