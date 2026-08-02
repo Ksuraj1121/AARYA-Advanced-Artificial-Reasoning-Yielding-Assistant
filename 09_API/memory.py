@@ -8,21 +8,52 @@ import os
 from datetime import datetime
 
 
-# Memory Database File
+BASE_PATH = os.path.dirname(
+    os.path.abspath(__file__)
+)
 
-MEMORY_FILE = "aarya_memory.json"
+MEMORY_FILE = os.path.join(
+    BASE_PATH,
+    "aarya_memory.json"
+)
 
 
 
-# ==========================================
-# Save Memory
-# ==========================================
+def load_memory():
+
+    try:
+
+        if not os.path.exists(MEMORY_FILE):
+            return {}
+
+        with open(
+            MEMORY_FILE,
+            "r",
+            encoding="utf-8"
+        ) as file:
+
+            return json.load(file)
+
+
+    except Exception as e:
+
+        print(
+            "Memory Error:",
+            e
+        )
+
+        return {}
+
+
+
+
 
 def save_memory(key, value):
 
-    memory = load_memory()
+    data = load_memory()
 
-    memory[key] = {
+
+    data[key] = {
 
         "value": value,
 
@@ -35,75 +66,15 @@ def save_memory(key, value):
 
     with open(
         MEMORY_FILE,
-        "w"
+        "w",
+        encoding="utf-8"
     ) as file:
 
         json.dump(
-            memory,
+            data,
             file,
             indent=4
         )
 
 
-
-    return "Memory Saved"
-
-
-
-# ==========================================
-# Load Memory
-# ==========================================
-
-def load_memory():
-
-    if not os.path.exists(
-        MEMORY_FILE
-    ):
-
-        return {}
-
-
-    with open(
-        MEMORY_FILE,
-        "r"
-    ) as file:
-
-        return json.load(file)
-
-
-
-# ==========================================
-# Read Memory
-# ==========================================
-
-def get_memory(key):
-
-    memory = load_memory()
-
-    if key in memory:
-
-        return memory[key]
-
-
-    return "No Memory Found"
-
-
-
-
-
-# ==========================================
-# Test
-# ==========================================
-
-if __name__ == "__main__":
-
-
-    save_memory(
-        "Founder",
-        "Suraj Kamble"
-    )
-
-
-    print(
-        get_memory("Founder")
-    )
+    return data
