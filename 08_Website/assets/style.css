@@ -1,574 +1,692 @@
-<!DOCTYPE html>
-<html lang="en">
+/* =====================================
+   AARYA AI WEBSITE v2.3
+   Premium AI Interface
+===================================== */
 
-<head>
 
-<meta charset="UTF-8">
+/* RESET */
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-<title>AARYA AI | Advanced Artificial Reasoning Yielding Assistant</title>
 
-<meta name="description"
-content="AARYA AI - Advanced Artificial Intelligence Ecosystem built by Suraj Kamble">
+body{
 
-<link rel="stylesheet" href="assets/style.css">
+    font-family:"Segoe UI",Arial,sans-serif;
 
-</head>
+    background:#050505;
 
+    color:white;
 
-<body>
+    overflow-x:hidden;
 
+}
 
-<div class="ai-background"></div>
 
+/* BACKGROUND */
 
-<!-- Navigation -->
+.ai-background{
 
-<nav>
+    position:fixed;
 
-<div class="logo">
-🤖 AARYA AI
-</div>
+    width:100%;
 
+    height:100%;
 
-<ul>
+    top:0;
 
-<li><a href="index.html">Home</a></li>
+    left:0;
 
-<li><a href="about.html">About</a></li>
+    z-index:-1;
 
-<li><a href="features.html">Features</a></li>
 
-<li><a href="founder.html">Founder</a></li>
+    background:
 
-<li><a href="contact.html">Contact</a></li>
+    radial-gradient(
+    circle at top,
+    rgba(255,215,0,0.20),
+    transparent 45%
+    );
 
-</ul>
+}
 
-</nav>
 
 
+nav{
 
+    display:flex;
 
-<!-- Hero Section -->
+    justify-content:space-between;
 
+    align-items:center;
 
-<header class="hero">
+    padding:20px 8%;
 
+    background:#080808;
 
-<div class="ai-core">
+    border-bottom:1px solid #222;
 
-<div class="core-circle">
-🤖
-</div>
+    position:sticky;
 
-</div>
+    top:0;
 
+    z-index:1000;
 
+}
 
-<h1>
-AARYA AI
-</h1>
 
 
+.logo{
 
-<h2>
-Advanced Artificial Reasoning Yielding Assistant
-</h2>
+    font-size:32px;
 
+    font-weight:800;
 
+    color:#FFD700;
 
-<p>
+    text-shadow:0 0 20px #FFD700;
 
-The next generation AI assistant ecosystem
-for intelligent automation, voice interaction,
-memory and future technologies.
+}
 
-</p>
 
 
+nav ul{
 
-<a href="features.html">
+    display:flex;
 
-<button>
-Explore AARYA
-</button>
+    gap:30px;
 
-</a>
+    list-style:none;
 
+}
 
 
-</header>
 
+nav a{
 
+    color:white;
 
+    text-decoration:none;
 
+}
 
 
-<!-- About -->
+nav a:hover{
 
+    color:#FFD700;
 
-<section class="about">
+}
 
 
-<h2>
-About AARYA
-</h2>
 
 
+/* HERO */
 
-<p>
 
-AARYA is a modular artificial intelligence ecosystem
-designed to provide intelligent assistance,
-automation, memory management and advanced AI capabilities.
+.hero{
 
-</p>
+    min-height:85vh;
 
+    display:flex;
 
-</section>
+    flex-direction:column;
 
+    justify-content:center;
 
+    align-items:center;
 
+    text-align:center;
 
+    padding:50px 20px;
 
+}
 
-<!-- Core Systems -->
 
 
-<section class="features">
+.core-circle{
 
 
-<h2>
-🧠 AARYA Core Systems
-</h2>
+    width:170px;
 
+    height:170px;
 
+    border-radius:50%;
 
-<div class="feature-container">
 
+    display:flex;
 
+    align-items:center;
 
-<div class="card">
+    justify-content:center;
 
-<h3>
-🧠 Brain Core
-</h3>
 
-<p>
-Advanced reasoning engine for intelligence
-and decision making.
-</p>
+    font-size:70px;
 
-</div>
 
+    border:3px solid #FFD700;
 
 
-<div class="card">
+    background:#111;
 
-<h3>
-🎙 Voice Module
-</h3>
 
-<p>
-Natural voice interaction with wake word
-and communication.
-</p>
+    box-shadow:
 
-</div>
+    0 0 30px #FFD700;
 
 
+    animation:pulse 2s infinite;
 
-<div class="card">
 
-<h3>
-💾 Memory System
-</h3>
+}
 
-<p>
-Smart memory management for learning
-and personalization.
-</p>
 
-</div>
 
+@keyframes pulse{
 
 
-<div class="card">
+50%{
 
-<h3>
-⚡ Automation Engine
-</h3>
+transform:scale(1.15);
 
-<p>
-System control, file management and
-task automation.
-</p>
+}
 
-</div>
 
+}
 
 
-<div class="card">
 
-<h3>
-🖥 GUI Dashboard
-</h3>
+.hero h1{
 
-<p>
-Modern interface for monitoring
-AARYA systems.
-</p>
 
-</div>
+font-size:75px;
 
+color:#FFD700;
 
+text-shadow:0 0 30px #FFD700;
 
-<div class="card">
 
-<h3>
-☁ AI Cloud
-</h3>
+}
 
-<p>
-Future cloud intelligence platform.
-</p>
 
-</div>
 
+.hero h2{
 
+font-size:30px;
 
-</div>
+margin:20px;
 
+}
 
-</section>
-<!-- Architecture Section -->
 
 
-<section class="architecture">
+.hero p{
 
+max-width:800px;
 
-<h2>
-🏗 AARYA Architecture
-</h2>
+font-size:20px;
 
+color:#ccc;
 
-<div class="architecture-box">
+}
 
 
-<div>
-🧠
-<br>
-Brain Core
-</div>
 
 
-<div>
-🎙
-<br>
-Voice Module
-</div>
+button{
 
 
-<div>
-💾
-<br>
-Memory System
-</div>
+margin-top:30px;
 
+padding:15px 45px;
 
-<div>
-⚡
-<br>
-Automation Engine
-</div>
+border:none;
 
+border-radius:30px;
 
-<div>
-🖥
-<br>
-GUI Dashboard
-</div>
+background:#FFD700;
 
+color:black;
 
-<div>
-☁
-<br>
-AI Cloud
-</div>
+font-size:18px;
 
+font-weight:bold;
 
-</div>
+cursor:pointer;
 
 
-</section>
+}
 
 
 
+button:hover{
 
 
+transform:scale(1.1);
 
+box-shadow:0 0 30px #FFD700;
 
 
-<!-- System Status -->
+}
 
 
-<section class="status">
 
+/* SECTIONS */
 
-<h2>
-🟢 AARYA System Status
-</h2>
 
+section{
 
 
-<div class="status-container">
+max-width:1100px;
 
+margin:60px auto;
 
-<p>
-🟢 Brain Core : Online
-</p>
+padding:40px;
 
 
-<p>
-🟢 Memory System : Active
-</p>
+background:#111;
 
 
-<p>
-🟢 Voice Module : Ready
-</p>
+border-radius:20px;
 
 
-<p>
-🟢 Automation Engine : Running
-</p>
+border:1px solid #333;
 
 
-<p>
-🟢 Security Layer : Protected
-</p>
+}
 
 
-</div>
 
+section h2{
 
-</section>
 
+text-align:center;
 
 
+color:#FFD700;
 
 
+font-size:35px;
 
 
+margin-bottom:30px;
 
-<!-- Technology Stack -->
 
+}
+/* =====================================
+   FEATURE CARDS
+===================================== */
 
-<section class="technology">
 
+.feature-container{
 
-<h2>
-💻 Technology Stack
-</h2>
+    display:grid;
 
+    grid-template-columns:
+    repeat(auto-fit,minmax(240px,1fr));
 
+    gap:25px;
 
-<div class="feature-container">
+}
 
 
-<div class="card">
 
-<h3>
-🐍 Python
-</h3>
+.card{
 
-<p>
-Core programming language of AARYA system.
-</p>
 
-</div>
+    background:#080808;
 
+    padding:30px;
 
+    border-radius:20px;
 
-<div class="card">
+    border:1px solid #333;
 
-<h3>
-🪟 Windows
-</h3>
+    transition:.4s;
 
-<p>
-Desktop platform integration and control.
-</p>
 
-</div>
+}
 
 
 
+.card:hover{
 
-<div class="card">
 
-<h3>
-🧩 Modular Architecture
-</h3>
+    transform:translateY(-10px);
 
-<p>
-Independent modules for future expansion.
-</p>
 
-</div>
+    border-color:#FFD700;
 
 
+    box-shadow:
 
+    0 0 25px rgba(255,215,0,.5);
 
-<div class="card">
 
-<h3>
-🤖 Artificial Intelligence
-</h3>
+}
 
-<p>
-Future AI models and intelligent automation.
-</p>
 
-</div>
 
+.card h3{
 
-</div>
 
+    color:#FFD700;
 
-</section>
+    margin-bottom:15px;
 
 
+}
 
 
 
+.card p{
 
 
+    color:#ccc;
 
-<!-- Development Roadmap -->
 
+}
 
-<section class="roadmap">
 
 
-<h2>
-🚀 Development Roadmap
-</h2>
 
 
+/* =====================================
+   ARCHITECTURE
+===================================== */
 
-<div class="status-container">
 
+.architecture-box{
 
-<p>
-✅ Phase 1 - Git Repository Setup
-</p>
 
+    display:grid;
 
-<p>
-✅ Phase 2 - Professional Documentation
-</p>
 
+    grid-template-columns:
 
-<p>
-🔄 Phase 3 - Official Website Development
-</p>
+    repeat(auto-fit,minmax(150px,1fr));
 
 
-<p>
-⏳ Phase 4 - Cloud Deployment
-</p>
+    gap:20px;
 
 
-<p>
-⏳ Phase 5 - Android & iOS Application
-</p>
+}
 
 
-<p>
-🌎 Phase 6 - Global AI Ecosystem Launch
-</p>
 
+.architecture-box div{
 
-</div>
 
+    background:#080808;
 
-</section>
 
+    padding:25px;
 
 
+    text-align:center;
 
 
+    border-radius:15px;
 
 
+    border:1px solid #333;
 
-<!-- Founder Section -->
 
+    font-size:18px;
 
-<section class="founder">
 
+    transition:.3s;
 
-<h2>
-👨‍💻 Founder
-</h2>
 
+}
 
 
-<p>
 
-<strong>
-Suraj Kamble
-</strong>
+.architecture-box div:hover{
 
-<br>
 
-Founder & Chief Architect
+    border-color:#FFD700;
 
-</p>
 
+    transform:scale(1.05);
 
 
-<p>
+}
 
-Building an intelligent AI ecosystem
-for innovation, security and assistance.
 
-</p>
 
 
-</section>
 
+/* =====================================
+   AI DASHBOARD
+===================================== */
 
 
+.dashboard-container{
 
 
+    display:grid;
 
 
+    grid-template-columns:
 
-<!-- Footer -->
+    repeat(auto-fit,minmax(230px,1fr));
 
 
-<footer>
+    gap:25px;
 
 
-<p>
+}
 
-© 2026 AARYA AI
 
-<br><br>
 
-"Initializing Intelligence. Building The Future."
+.dashboard-card{
 
-</p>
 
+    background:#080808;
 
-</footer>
 
+    padding:30px;
 
 
+    text-align:center;
 
-</body>
 
-</html>
+    border-radius:20px;
+
+
+    border:1px solid #333;
+
+
+    transition:.4s;
+
+
+}
+
+
+
+.dashboard-card:hover{
+
+
+    transform:translateY(-10px);
+
+
+    border-color:#FFD700;
+
+
+    box-shadow:
+
+    0 0 30px rgba(255,215,0,.5);
+
+
+}
+
+
+
+.dashboard-card h3{
+
+
+    color:#FFD700;
+
+
+    margin-bottom:20px;
+
+
+}
+
+
+
+.dashboard-card p{
+
+
+    color:#ccc;
+
+
+    margin:10px;
+
+
+}
+
+
+
+
+
+/* =====================================
+   STATUS
+===================================== */
+
+
+.status-container{
+
+
+    display:grid;
+
+
+    gap:15px;
+
+
+}
+
+
+
+.status-container p{
+
+
+    background:#080808;
+
+
+    padding:18px;
+
+
+    border-radius:10px;
+
+
+    border-left:4px solid #FFD700;
+
+
+    color:#ddd;
+
+
+}
+
+
+
+
+
+
+/* =====================================
+   FOOTER
+===================================== */
+
+
+footer{
+
+
+    text-align:center;
+
+
+    padding:40px;
+
+
+    color:#999;
+
+
+    border-top:1px solid #222;
+
+
+}
+
+
+
+
+
+
+
+/* =====================================
+   MOBILE RESPONSIVE
+===================================== */
+
+
+@media(max-width:768px){
+
+
+nav{
+
+
+    flex-direction:column;
+
+    gap:20px;
+
+
+}
+
+
+
+nav ul{
+
+
+    flex-direction:column;
+
+    text-align:center;
+
+
+}
+
+
+
+.hero h1{
+
+
+    font-size:45px;
+
+
+}
+
+
+
+.hero h2{
+
+
+    font-size:22px;
+
+
+}
+
+
+
+section{
+
+
+    margin:30px 15px;
+
+
+    padding:25px;
+
+
+}
+
+
+
+}
