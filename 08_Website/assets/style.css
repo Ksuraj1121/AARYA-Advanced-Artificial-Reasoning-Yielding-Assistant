@@ -1,100 +1,574 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AARYA AI | Advanced Artificial Reasoning Yielding Assistant</title>
+
+<meta name="description"
+content="AARYA AI - Advanced Artificial Intelligence Ecosystem built by Suraj Kamble">
+
+<link rel="stylesheet" href="assets/style.css">
+
+</head>
 
 
-body {
-
-    background: #050505;
-
-    color: white;
-
-    font-family: Arial, Helvetica, sans-serif;
-
-    line-height: 1.6;
-
-}
+<body>
 
 
-
-header {
-
-    text-align: center;
-
-    padding: 60px 20px;
-
-    border-bottom: 1px solid #333;
-
-}
+<div class="ai-background"></div>
 
 
+<!-- Navigation -->
 
-header h1 {
+<nav>
 
-    font-size: 50px;
-
-    color: gold;
-
-}
-
+<div class="logo">
+🤖 AARYA AI
+</div>
 
 
-header p {
+<ul>
 
-    font-size: 20px;
+<li><a href="index.html">Home</a></li>
 
-    color: #cccccc;
+<li><a href="about.html">About</a></li>
 
-}
+<li><a href="features.html">Features</a></li>
 
+<li><a href="founder.html">Founder</a></li>
 
+<li><a href="contact.html">Contact</a></li>
 
-section {
+</ul>
 
-    max-width: 900px;
-
-    margin: 40px auto;
-
-    padding: 30px;
-
-    background: #111;
-
-    border-radius: 15px;
-
-    border: 1px solid #333;
-
-}
+</nav>
 
 
 
-section h2 {
 
-    color: gold;
-
-    margin-bottom: 15px;
-
-}
+<!-- Hero Section -->
 
 
-
-section p {
-
-    color: #dddddd;
-
-}
+<header class="hero">
 
 
+<div class="ai-core">
 
-footer {
+<div class="core-circle">
+🤖
+</div>
 
-    text-align: center;
+</div>
 
-    padding: 30px;
 
-    color: #999;
 
-    border-top: 1px solid #333;
+<h1>
+AARYA AI
+</h1>
 
-}
+
+
+<h2>
+Advanced Artificial Reasoning Yielding Assistant
+</h2>
+
+
+
+<p>
+
+The next generation AI assistant ecosystem
+for intelligent automation, voice interaction,
+memory and future technologies.
+
+</p>
+
+
+
+<a href="features.html">
+
+<button>
+Explore AARYA
+</button>
+
+</a>
+
+
+
+</header>
+
+
+
+
+
+
+<!-- About -->
+
+
+<section class="about">
+
+
+<h2>
+About AARYA
+</h2>
+
+
+
+<p>
+
+AARYA is a modular artificial intelligence ecosystem
+designed to provide intelligent assistance,
+automation, memory management and advanced AI capabilities.
+
+</p>
+
+
+</section>
+
+
+
+
+
+
+<!-- Core Systems -->
+
+
+<section class="features">
+
+
+<h2>
+🧠 AARYA Core Systems
+</h2>
+
+
+
+<div class="feature-container">
+
+
+
+<div class="card">
+
+<h3>
+🧠 Brain Core
+</h3>
+
+<p>
+Advanced reasoning engine for intelligence
+and decision making.
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>
+🎙 Voice Module
+</h3>
+
+<p>
+Natural voice interaction with wake word
+and communication.
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>
+💾 Memory System
+</h3>
+
+<p>
+Smart memory management for learning
+and personalization.
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>
+⚡ Automation Engine
+</h3>
+
+<p>
+System control, file management and
+task automation.
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>
+🖥 GUI Dashboard
+</h3>
+
+<p>
+Modern interface for monitoring
+AARYA systems.
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>
+☁ AI Cloud
+</h3>
+
+<p>
+Future cloud intelligence platform.
+</p>
+
+</div>
+
+
+
+</div>
+
+
+</section>
+<!-- Architecture Section -->
+
+
+<section class="architecture">
+
+
+<h2>
+🏗 AARYA Architecture
+</h2>
+
+
+<div class="architecture-box">
+
+
+<div>
+🧠
+<br>
+Brain Core
+</div>
+
+
+<div>
+🎙
+<br>
+Voice Module
+</div>
+
+
+<div>
+💾
+<br>
+Memory System
+</div>
+
+
+<div>
+⚡
+<br>
+Automation Engine
+</div>
+
+
+<div>
+🖥
+<br>
+GUI Dashboard
+</div>
+
+
+<div>
+☁
+<br>
+AI Cloud
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+<!-- System Status -->
+
+
+<section class="status">
+
+
+<h2>
+🟢 AARYA System Status
+</h2>
+
+
+
+<div class="status-container">
+
+
+<p>
+🟢 Brain Core : Online
+</p>
+
+
+<p>
+🟢 Memory System : Active
+</p>
+
+
+<p>
+🟢 Voice Module : Ready
+</p>
+
+
+<p>
+🟢 Automation Engine : Running
+</p>
+
+
+<p>
+🟢 Security Layer : Protected
+</p>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+<!-- Technology Stack -->
+
+
+<section class="technology">
+
+
+<h2>
+💻 Technology Stack
+</h2>
+
+
+
+<div class="feature-container">
+
+
+<div class="card">
+
+<h3>
+🐍 Python
+</h3>
+
+<p>
+Core programming language of AARYA system.
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>
+🪟 Windows
+</h3>
+
+<p>
+Desktop platform integration and control.
+</p>
+
+</div>
+
+
+
+
+<div class="card">
+
+<h3>
+🧩 Modular Architecture
+</h3>
+
+<p>
+Independent modules for future expansion.
+</p>
+
+</div>
+
+
+
+
+<div class="card">
+
+<h3>
+🤖 Artificial Intelligence
+</h3>
+
+<p>
+Future AI models and intelligent automation.
+</p>
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+<!-- Development Roadmap -->
+
+
+<section class="roadmap">
+
+
+<h2>
+🚀 Development Roadmap
+</h2>
+
+
+
+<div class="status-container">
+
+
+<p>
+✅ Phase 1 - Git Repository Setup
+</p>
+
+
+<p>
+✅ Phase 2 - Professional Documentation
+</p>
+
+
+<p>
+🔄 Phase 3 - Official Website Development
+</p>
+
+
+<p>
+⏳ Phase 4 - Cloud Deployment
+</p>
+
+
+<p>
+⏳ Phase 5 - Android & iOS Application
+</p>
+
+
+<p>
+🌎 Phase 6 - Global AI Ecosystem Launch
+</p>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+<!-- Founder Section -->
+
+
+<section class="founder">
+
+
+<h2>
+👨‍💻 Founder
+</h2>
+
+
+
+<p>
+
+<strong>
+Suraj Kamble
+</strong>
+
+<br>
+
+Founder & Chief Architect
+
+</p>
+
+
+
+<p>
+
+Building an intelligent AI ecosystem
+for innovation, security and assistance.
+
+</p>
+
+
+</section>
+
+
+
+
+
+
+
+
+<!-- Footer -->
+
+
+<footer>
+
+
+<p>
+
+© 2026 AARYA AI
+
+<br><br>
+
+"Initializing Intelligence. Building The Future."
+
+</p>
+
+
+</footer>
+
+
+
+
+</body>
+
+</html>
