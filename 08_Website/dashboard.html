@@ -7,7 +7,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>AARYA AI | Command Center</title>
+<title>AARYA AI | Command Center v2.8</title>
 
 <link rel="stylesheet" href="assets/style.css">
 
@@ -19,6 +19,9 @@
 
 <div class="ai-background"></div>
 
+
+
+<!-- Navigation -->
 
 <nav>
 
@@ -49,6 +52,8 @@
 
 
 
+<!-- Hero -->
+
 <header class="hero">
 
 
@@ -58,7 +63,7 @@
 
 
 <h2>
-AI System Monitoring Interface
+AI System Monitoring Interface v2.8
 </h2>
 
 
@@ -68,12 +73,20 @@ for AARYA core intelligence systems.
 </p>
 
 
+<p id="api-status">
+🔄 Connecting to AARYA API...
+</p>
+
+
 </header>
 
 
 
 
 
+
+
+<!-- System Status -->
 
 
 <section>
@@ -151,7 +164,7 @@ Storage: Connected
 <div class="dashboard-card">
 
 <h3>
-⚡ Automation
+⚡ Automation Engine
 </h3>
 
 <p id="automation">
@@ -175,6 +188,41 @@ Tasks: Enabled
 
 
 
+
+
+<!-- Memory Core -->
+
+
+<section>
+
+
+<h2>
+🧠 AARYA Memory Core
+</h2>
+
+
+<div class="dashboard-card">
+
+
+<p id="founder-memory">
+
+Loading Founder Memory...
+
+</p>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+<!-- Security -->
 
 
 <section>
@@ -214,6 +262,8 @@ Tasks: Enabled
 
 
 
+<!-- Architecture -->
+
 
 <section>
 
@@ -241,6 +291,7 @@ Main AI processing system.
 
 
 
+
 <div class="card">
 
 <h3>
@@ -252,6 +303,7 @@ Knowledge and profile storage.
 </p>
 
 </div>
+
 
 
 
@@ -302,80 +354,158 @@ Task execution system.
 
 
 
+<!-- AARYA API Connection -->
+
 
 <script>
 
 
-async function loadAARYAStatus(){
+async function loadAARYA(){
 
 
 try{
 
 
-const response = await fetch(
-"http://localhost:8000/status"
+// STATUS API
+
+const statusResponse = await fetch(
+"http://127.0.0.1:8000/status"
 );
 
 
-const data = await response.json();
+const statusData =
+await statusResponse.json();
+
 
 
 
 document.getElementById("brain").innerHTML =
-"Status: " + data.brain_core;
+"Status: "
++
+statusData.brain_core;
 
 
 
 document.getElementById("voice").innerHTML =
-"Status: " + data.voice_module;
+"Status: "
++
+statusData.voice_module;
 
 
 
 document.getElementById("memory").innerHTML =
-"Status: " + data.memory_system;
+"Status: "
++
+statusData.memory_system;
 
 
 
 document.getElementById("automation").innerHTML =
-"Status: " + data.automation_engine;
+"Status: "
++
+statusData.automation_engine;
+
+
+
+
+
+
+
+// MEMORY API
+
+
+const memoryResponse = await fetch(
+"http://127.0.0.1:8000/memory"
+);
+
+
+const memoryData =
+await memoryResponse.json();
+
+
+
+
+if(memoryData.Founder){
+
+
+document.getElementById(
+"founder-memory"
+).innerHTML =
+
+
+"👤 Founder : "
++
+memoryData.Founder.value
++
+"<br><br>"
++
+"⏱ Last Update : "
++
+memoryData.Founder.time;
+
+
+}
+
+
+
+
+
+
+document.getElementById(
+"api-status"
+).innerHTML =
+
+"🟢 AARYA API ONLINE";
 
 
 
 }
+
+
+
 
 catch(error){
 
 
-document.getElementById("brain").innerHTML =
-"API Offline";
+
+document.getElementById(
+"api-status"
+).innerHTML =
+
+"🔴 AARYA API OFFLINE";
 
 
-document.getElementById("voice").innerHTML =
-"API Offline";
 
-
-document.getElementById("memory").innerHTML =
-"API Offline";
-
-
-document.getElementById("automation").innerHTML =
-"API Offline";
-
-
-console.log(error);
-
-
-}
+console.log(
+error
+);
 
 
 }
 
 
 
-loadAARYAStatus();
+}
+
+
+
+
+// First Load
+
+loadAARYA();
+
+
+// Auto Update Every 5 Seconds
+
+setInterval(
+loadAARYA,
+5000
+);
+
 
 
 </script>
+
 
 
 
