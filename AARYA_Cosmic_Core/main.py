@@ -4,10 +4,20 @@ from pathlib import Path
 from PySide6.QtGui import QGuiApplication
 from PySide6.QtQml import QQmlApplicationEngine
 
+from backend.backend import Backend
+
+
 app = QGuiApplication(sys.argv)
 
 engine = QQmlApplicationEngine()
 
+# Create Backend
+backend = Backend()
+
+# Make Backend available in QML
+engine.rootContext().setContextProperty("backend", backend)
+
+# Load Main.qml
 qml_file = Path(__file__).parent / "qml" / "Main.qml"
 engine.load(str(qml_file))
 
